@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daddy Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>Daddy词汇学习助手</h1>
+            <a href="https://www.nextdaddy.cn" target="_blank" class="blog-link">
+                <i class="fas fa-blog"></i> 访问我的博客
+            </a>
+        </header>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="words">单词</div>
+            <div class="tab" data-tab="sentences">句子</div>
+        </div>
+        
+        <div class="content active" id="words-content">
+            <div class="search-bar">
+                <input type="text" id="word-search" placeholder="搜索单词...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="sort-options">
+                <button id="sort-word-new" class="sort-btn active">最新添加</button>
+                <button id="sort-word-az" class="sort-btn">字母排序</button>
+            </div>
+            
+            <div class="input-group">
+                <label for="word-input">添加新单词：</label>
+                <input type="text" id="word-input" placeholder="请输入英文单词">
+                <div id="word-error" class="error"></div>
+            </div>
+            <button id="add-word-btn" class="add-btn">添加单词</button>
+            <div id="word-loading" class="loading">
+                <div class="spinner"></div>
+                <span>正在获取翻译...</span>
+            </div>
+            
+            <div class="word-list" id="word-list">
+                <!-- 单词列表将在这里动态生成 -->
+            </div>
+            
+            <div class="pagination" id="word-pagination">
+                <!-- 分页控件将在这里动态生成 -->
+            </div>
+        </div>
+        
+        <div class="content" id="sentences-content">
+            <div class="search-bar">
+                <input type="text" id="sentence-search" placeholder="搜索句子...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="sort-options">
+                <button id="sort-sentence-new" class="sort-btn active">最新添加</button>
+                <button id="sort-sentence-az" class="sort-btn">字母排序</button>
+            </div>
+            
+            <div class="input-group">
+                <label for="sentence-input">添加新句子：</label>
+                <textarea id="sentence-input" rows="3" placeholder="请输入英文句子"></textarea>
+                <div id="sentence-error" class="error"></div>
+            </div>
+            <div class="input-group">
+                <label for="translation-input">翻译（可选）：</label>
+                <textarea id="translation-input" rows="3" placeholder="请输入句子翻译（可选）"></textarea>
+            </div>
+            <button id="add-sentence-btn" class="add-btn">添加句子</button>
+            <div id="sentence-loading" class="loading">
+                <div class="spinner"></div>
+                <span>正在获取翻译...</span>
+            </div>
+            
+            <div class="sentence-list" id="sentence-list">
+                <!-- 句子列表将在这里动态生成 -->
+            </div>
+            
+            <div class="pagination" id="sentence-pagination">
+                <!-- 分页控件将在这里动态生成 -->
+            </div>
+        </div>
+        
+        <div class="data-controls">
+            <button id="export-btn" class="control-btn">
+                <i class="fas fa-download"></i> 导出数据
+            </button>
+            <button id="import-btn" class="control-btn">
+                <i class="fas fa-upload"></i> 导入数据
+            </button>
+            <input type="file" id="import-file" accept=".json" style="display: none;">
+        </div>
+        
+        <footer class="footer">
+            <p>© 2025 陈涛 版权所有</p>
+            <p><a href="https://icp.gov.moe/?keyword=20250711" target="_blank">萌ICP备20250711号</a></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
