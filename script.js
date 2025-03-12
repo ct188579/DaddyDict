@@ -17,44 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('sentence-loading').style.display = 'none';
 });
 
-// 初始化主题切换
-function initThemeToggle() {
-    const themeToggle = document.querySelector('.theme-toggle');
-    const themeIcon = themeToggle.querySelector('i');
-
-    // 检查本地存储中的主题设置
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    if (isDarkMode) {
-        document.body.classList.add('dark-mode');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    }
-
-    // 添加主题切换事件
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-
-        // 更新图标
-        if (isDark) {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        } else {
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-        }
-
-        // 保存设置到本地存储
-        localStorage.setItem('darkMode', isDark);
-
-        // 添加动画效果
-        themeToggle.classList.add('pulse');
-        setTimeout(() => {
-            themeToggle.classList.remove('pulse');
-        }, 500);
-    });
-}
-
 // 初始化标签页
 function initTabs() {
     document.querySelectorAll('.tab').forEach(tab => {
